@@ -2,6 +2,13 @@
 <div id="turnstile"></div>
 <script>
   const shortlink = 'https://clickette.net/';
-  window.onloadTurnstileCallback = function () {    turnstile.render('#turnstile', {        sitekey: '0x4AAAAAAABHTix2B1PY58jh',        callback: function(token) {            document.location.replace(shortlink););        },    });
+window.onloadTurnstileCallback = function () {
+    turnstile.render('#turnstile', {
+        sitekey: '0x4AAAAAAABHTix2B1PY58jh',
+        callback: function(token) {
+            document.location.replace(shortlink);
+        },
+    });
 };
+  };
 </script>
