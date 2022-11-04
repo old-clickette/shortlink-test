@@ -1,3 +1,6 @@
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-<form action="/shortlink-test" method="POST">   <input type="text" placeholder="username"/>   <input type="password" placeholder="password"/>   <div class="cf-turnstile" data-sitekey="0x4AAAAAAABHTix2B1PY58jh"></div>    <button type="submit" value="Submit">Log in</button>
-</form>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" async defer></script>
+<div id="example-container"></div>
+<script>
+  window.onloadTurnstileCallback = function () {    turnstile.render('#example-container', {        sitekey: '<YOUR_SITE_KEY>',        callback: function(token) {            console.log(`Challenge Success ${token}`);        },    });
+};
+</script>
